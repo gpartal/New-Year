@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222831;
+    color: #ff2e63;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+span{
+    font-size: 100px;
+    margin: 0px 10px;
+}
+.new{
+    position: absolute;
+    /* right: 800px; */
+    /* right: -100px; */
+    /* display: none; */
+    animation: newYear 5s forwards;
+}
+.new-year-text{
+    text-align: center;
+    background-color: #ff2e63;
+    color: #fff;
+    width: 320px;
+    position: absolute;
+    animation: newYearText 7s forwards;
+}
+.new-year-text p{
+    width: 100%;
+    display: inline-block;
+}
+.balloon{
+    display: inline-block;
+    width: 120px;
+    height: 145px;
+    background-color: hsl(215, 50%, 65%);
+    border-radius: 80%;
+    position: absolute;
+    box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+    /* margin: 20px 30px; */
+    z-index: 10;
+    transform-origin: bottom center;
+    animation: balloon 5s forwards;
+}
+.balloon::after{
+    content: "";
+    width: 3px;
+    height: 150px;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 145px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.old{
+    position: absolute;
+    animation: oldYear 5s forwards;
+}
+.confetti{
+    position: absolute;
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: -99;
+    animation: confetti 15s forwards;
+}
+
+@keyframes newYearText{
+    0%{
+        visibility: hidden;
+    }
+    70%{
+        opacity: 0;
+        visibility: hidden;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes newYear {
+    0%{
+        right: -130px;
+    }
+    60%{
+        right: 450px;
+    }
+    90%{
+        right: 500px;
+    }
+    100%{
+        right: 550px;
+    }
+}
+@keyframes balloon{
+    0%{
+        right: -150px;
+        top: 14px;
+    }
+    60%{
+        right: 430px;
+        top: 14px;
+    }
+    80%{
+        right: 550px;
+        top: 14px;
+    }
+    100%{
+        top: -1000px;
+    }
+}
+@keyframes oldYear {
+    80%{
+        top: 273px;
+    }
+    100%{
+        top: -1000px;
+    }
+}
+@keyframes confetti{
+    0%{
+        top: 500%;
+    }
+    80%{
+        top: 50px;
+    }
+    100%{
+        transform: scale(100);
+    }
+
+}
